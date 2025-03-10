@@ -81,6 +81,14 @@ export const font = {
       lineHeight: '24px',
       letterSpacing: '-0.6px',
     },
+    r56: {
+      fontFamily: 'Outfit',
+      fontSize: '56px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '60px',
+      letterSpacing: '-2.8px',
+    },
 
     m28: {
       fontFamily: 'Outfit',

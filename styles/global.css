@@ -28,7 +28,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 
-  background-color: rgba(11, 18, 54, 1);
+  background:
+    radial-gradient(
+      141.2% 104.84% at 0.31% -0.79%,
+      rgba(140, 45, 255, 0.1) 0%,
+      rgba(115, 0, 255, 0) 100%
+    ),
+    radial-gradient(
+      117.77% 91.85% at 50.13% 100%,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(103, 123, 255, 0.46) 37%,
+      rgba(0, 35, 255, 0.23) 62%,
+      rgba(78, 102, 255, 0) 100%
+    ),
+    #000;
 }
 
 input[type='number']::-webkit-outer-spin-button,
