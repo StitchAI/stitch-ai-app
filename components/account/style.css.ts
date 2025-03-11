@@ -15,7 +15,7 @@ export const dropdownAction = recipe({
     {
       width: 'fit-content',
 
-      borderRadius: 8,
+      borderRadius: '100px',
       backgroundColor: color.white[10],
 
       color: color.white[100],
@@ -25,10 +25,10 @@ export const dropdownAction = recipe({
   variants: {
     size: {
       medium: {
-        padding: '8px 12px',
+        padding: '8px 16px',
       },
       large: {
-        padding: '16px 20px 16px 24px',
+        padding: '8px 16px',
       },
     },
   },
@@ -47,13 +47,13 @@ export const dropdownList = recipe({
     gap: 8,
 
     backgroundColor: color.white[10],
-    borderRadius: 8,
+    borderRadius: '16px',
     backdropFilter: 'blur(4px)',
 
     color: color.white[100],
 
     position: 'absolute',
-    top: '60px',
+    top: '50px',
 
     transition: 'opacity 0.1s',
     overflow: 'hidden',

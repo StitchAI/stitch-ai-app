@@ -5,16 +5,14 @@ import { color } from '@/assets/color';
 import { font } from '@/styles/global';
 
 export const wrapper = style({
-  width: '240px',
+  width: '100%',
+  height: 76,
 
   display: 'flex',
-  flexDirection: 'column',
-  gap: 44,
+  justifyContent: 'flex-end',
+  alignItems: 'center',
 
-  padding: '20px',
-
-  userSelect: 'none',
-  cursor: 'pointer',
+  padding: '20px 40px',
 });
 
 export const logo = style({
@@ -24,32 +22,20 @@ export const logo = style({
 
 export const menu = style({
   display: 'flex',
-  flexDirection: 'column',
+  alignItems: 'center',
 
-  gap: 4,
+  gap: 40,
 });
 
 export const menuItem = recipe({
-  base: [
-    font.outfit.r16,
-    {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10,
-
-      padding: '8px 0px',
-    },
-  ],
+  base: [font.outfit.r16],
   variants: {
     active: {
       true: {
-        background: 'linear-gradient(310deg, #B5BFFF 0%, #4E66FF 100%)',
-        backgroundClip: 'text',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
+        color: color.white[100],
       },
       false: {
-        color: color.white[100],
+        color: color.white[50],
       },
     },
   },

@@ -13,6 +13,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   size?: 'medium' | 'large';
   full?: boolean;
+  shadow?: boolean;
 }
 
 export const ButtonPrimary = ({
@@ -22,12 +23,13 @@ export const ButtonPrimary = ({
   size = 'large',
   full = false,
   state = 'primary',
+  shadow = false,
   onClick,
   ...rest
 }: Props) => {
   if (state === 'normal') {
     return (
-      <button className={style.normal({ full, size })} onClick={onClick} {...rest}>
+      <button className={style.normal({ full, size, shadow })} onClick={onClick} {...rest}>
         {iconLeading && <>{iconLeading}</>}
         {text}
         {iconTrailing && <>{iconTrailing}</>}
@@ -36,7 +38,7 @@ export const ButtonPrimary = ({
   }
 
   return (
-    <button className={style.wrapper({ full, size })} onClick={onClick} {...rest}>
+    <button className={style.wrapper({ full, size, shadow })} onClick={onClick} {...rest}>
       {iconLeading && <>{iconLeading}</>}
       {text}
       {iconTrailing && <>{iconTrailing}</>}

@@ -81,6 +81,14 @@ export const font = {
       lineHeight: '24px',
       letterSpacing: '-0.6px',
     },
+    r32: {
+      fontFamily: 'Outfit',
+      fontSize: '32px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '38px',
+      letterSpacing: '-1.6px',
+    },
     r56: {
       fontFamily: 'Outfit',
       fontSize: '56px',
@@ -90,6 +98,30 @@ export const font = {
       letterSpacing: '-2.8px',
     },
 
+    m14: {
+      fontFamily: 'Outfit',
+      fontSize: '14px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '20px',
+      letterSpacing: '-0.42px',
+    },
+    m18: {
+      fontFamily: 'Outfit',
+      fontSize: '18px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '24px',
+      letterSpacing: '-0.54px',
+    },
+    m20: {
+      fontFamily: 'Outfit',
+      fontSize: '18px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '26px',
+      letterSpacing: '-0.8px',
+    },
     m28: {
       fontFamily: 'Outfit',
       fontSize: '28px',

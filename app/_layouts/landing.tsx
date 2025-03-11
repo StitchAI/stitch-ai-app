@@ -24,7 +24,8 @@ export const LandingLayout = () => {
         <ButtonPrimary
           text="Go to App"
           iconTrailing={<ArrowNext width={20} height={20} fill={color.white[100]} />}
-          onClick={() => router.push('/main')}
+          onClick={() => router.push('/get-started')}
+          shadow
         />
       </div>
     </div>
