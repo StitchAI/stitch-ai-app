@@ -4,31 +4,30 @@ import { AxiosError } from 'axios';
 import { api } from '@/libs/axios';
 
 interface Request {
-  price: number;
-  active: boolean;
-  memoryType: string;
-  internalId: string;
+  buyerId: string;
+  listingId: string;
+  internalListingId: string;
   txHash: string;
-  memoryId?: string;
-  externalMemoryId?: string;
+  price: number;
 }
 
-export const usePostMarketListing = (walletAddress: string) => {
+export const usePostMarketPurchase = (walletAddress: string) => {
   const queryClient = useQueryClient();
 
   const mutationFn = async (request: Request): Promise<void> => {
     const apikey = `demo-${walletAddress}`;
-    await api.post(`/marketplace/list`, request, {
+    await api.post(`/purchase`, request, {
       headers: {
         apikey,
       },
     });
 
     await queryClient.invalidateQueries({ queryKey: ['market'] });
+    await queryClient.invalidateQueries({ queryKey: ['memory'] });
   };
 
   const data = useMutation<void, AxiosError<Request>, Request>({
-    mutationKey: ['create', 'market-listing'],
+    mutationKey: ['create', 'market-purchase'],
     mutationFn,
   });
 

@@ -38,9 +38,10 @@ export const MarketPlace = () => {
             agentMemories.map((m, i) => (
               <AgentMemoryCard
                 key={i}
-                id={m.memoryId || ''}
+                listingId={m.id || ''}
+                internalId={m.internalId || ''}
                 price={m.price}
-                message={m.memory?.message}
+                name={m.memory?.space?.name}
               />
             ))
           ) : (

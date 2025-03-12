@@ -119,7 +119,9 @@ const ListingProcess = () => {
         price: Number(value),
         active: true,
         memoryType: '0', // agent memory
-        internalId: txReceipt?.logs[0]?.topics?.[1] || '1',
+        internalId: txReceipt?.logs[0]?.topics?.[1]
+          ? BigInt(txReceipt.logs[0].topics[1]).toString()
+          : '1',
         txHash: txReceipt?.transactionHash || '',
         memoryId: selectedVersion,
         sellerId: address as string,
@@ -132,7 +134,6 @@ const ListingProcess = () => {
       setSelectedVersion('');
       reset();
 
-      // TODO: show success dialog
       openSuccessDialog({
         params: {
           title: 'Memory listed successfully',

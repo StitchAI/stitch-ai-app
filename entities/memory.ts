@@ -15,6 +15,8 @@ export type Memory = {
   id: string;
 
   spaceId: string;
+  space: MemorySpace;
+
   ownerId: string;
 
   message: string;
