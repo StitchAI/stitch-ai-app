@@ -1,16 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { MemorySpace } from '@/entities/memory';
+import { Purchase } from '@/entities/purchase';
 import { api } from '@/libs/axios';
-
-interface Response {
-  data: MemorySpace[];
-}
 
 const axios = async (walletAddress: String) => {
   const apikey = `demo-${walletAddress}`;
   return (
-    await api.get<Response>(`/memory/spaces`, {
+    await api.get<Purchase[]>(`/purchase`, {
       headers: {
         apikey,
       },
@@ -18,9 +14,9 @@ const axios = async (walletAddress: String) => {
   ).data;
 };
 
-export const useGetMemorySpaces = (walletAddress: String) => {
-  const queryKey = ['memory', 'spaces', walletAddress];
-  const data = useQuery<Response>({
+export const useGetPurchase = (walletAddress: String) => {
+  const queryKey = ['memory', 'purchase', walletAddress];
+  const data = useQuery<Purchase[]>({
     queryKey,
     queryFn: () => axios(walletAddress),
     enabled: !!walletAddress,

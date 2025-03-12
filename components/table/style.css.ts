@@ -13,44 +13,10 @@ export const ratio = createVar();
 
 export const backgroundColor = createVar();
 
-export const tableContainerStyle = recipe({
-  base: {
-    position: 'relative',
-    overflowX: 'auto',
-    borderRadius: '12px',
-  },
-  variants: {
-    xScrollDim: {
-      true: {
-        ':after': {
-          content: '',
-          display: 'block',
-          zIndex: 1,
-          position: 'sticky',
-          bottom: 'calc(100% - 51px)',
-          left: 'calc(100% - 92px)',
-
-          width: '92px',
-          height: '51px',
-          marginTop: '-51px',
-          background: 'linear-gradient(90deg, rgba(247, 247, 247, 0.00) 0%, #F7F7F7 50%)',
-        },
-
-        '@media': {
-          '(min-width: 580px)': {
-            ':after': {
-              display: 'none',
-            },
-          },
-        },
-      },
-      false: {
-        ':after': {
-          display: 'none',
-        },
-      },
-    },
-  },
+export const tableContainerStyle = style({
+  position: 'relative',
+  overflowX: 'auto',
+  borderRadius: '12px',
 });
 
 export const virtualizedWrapperStyle = style({
@@ -75,29 +41,28 @@ export const wrapperStyle = style({
 });
 
 export const headerStyle = style({
-  padding: '10px 24px',
+  padding: '12px 20px',
   position: 'sticky',
 
-  borderBottom: `1px solid ${color.black[5]}`,
   backgroundColor: backgroundColor,
 
   width: '100%',
-  minHeight: '52px',
+  minHeight: '44px',
   display: 'flex',
   alignItems: 'center',
 
   top: 0,
   zIndex: 1,
 
-  borderTopLeftRadius: '12px',
-  borderTopRightRadius: '12px',
+  borderTopLeftRadius: '16px',
+  borderTopRightRadius: '16px',
 });
 
 export const headerRowStyle = style({
   width: '100%',
 
   display: 'grid',
-  gap: '16px',
+  gap: '14px',
   gridTemplateColumns: ratio,
 });
 
@@ -112,8 +77,8 @@ export const bodyStyle = style({
   zIndex: 1,
   position: 'relative',
 
-  borderBottomLeftRadius: '12px',
-  borderBottomRightRadius: '12px',
+  borderBottomLeftRadius: '16px',
+  borderBottomRightRadius: '16px',
 
   height: bodyHeight,
 
@@ -122,9 +87,9 @@ export const bodyStyle = style({
 
 export const bodyRowStyle = recipe({
   base: {
-    padding: '10px 24px',
+    padding: '14px 20px',
     display: 'grid',
-    gap: '16px',
+    gap: '14px',
     gridTemplateColumns: ratio,
 
     minWidth: 0,
@@ -133,17 +98,12 @@ export const bodyRowStyle = recipe({
     position: 'absolute',
 
     transform: `translateY(${bodyRowTransformY})`,
-
-    borderBottom: `1px solid ${color.black[5]}`,
-    ':last-child': {
-      borderBottom: 'none',
-    },
   },
 
   variants: {
     selected: {
       selected: {
-        backgroundColor: color.black[3],
+        backgroundColor: color.white[3],
       },
       notSelected: {
         backgroundColor: 'transparent',
@@ -154,7 +114,7 @@ export const bodyRowStyle = recipe({
       clickable: {
         cursor: 'pointer',
         ':hover': {
-          backgroundColor: color.black[3],
+          backgroundColor: color.white[3],
         },
       },
       notClickable: {
@@ -166,11 +126,11 @@ export const bodyRowStyle = recipe({
 
 export const emptyTextStyle = style([
   utilities.flexCenter,
-  font.r14,
+  font.outfit.r14,
   utilities.flexCenter,
   {
     padding: '24px',
-    color: color.black[60],
+    color: color.white[60],
     backgroundColor: backgroundColor,
 
     '@media': {
@@ -183,7 +143,7 @@ export const emptyTextStyle = style([
 ]);
 
 export const moreStyle = style([
-  font.r14,
+  font.outfit.r14,
   {
     padding: '24px',
     color: color.black[60],

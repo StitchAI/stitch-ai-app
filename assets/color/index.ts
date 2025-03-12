@@ -33,6 +33,9 @@ export const color = {
   blue: {
     100: 'rgba(78, 102, 255, 1)',
   },
+  lightBlue: {
+    100: 'rgba(181, 191, 255, 1)',
+  },
   purple: {
     100: 'rgba(115, 0, 255, 1)',
   },

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Stitch AI - Marketplace',
-  description: 'Stitch AI - Marketplace',
+  title: 'Stitch AI - Memories',
+  description: 'Stitch AI - Memories',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

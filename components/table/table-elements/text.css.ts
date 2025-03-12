@@ -7,31 +7,21 @@ import { font } from '@/styles/global';
 export const wrapperStyle = style({
   display: 'flex',
   alignItems: 'center',
-  gap: '4px',
+  gap: 14,
 
   minWidth: 0,
 });
 
-export const iconStyle = recipe({
-  base: {
-    borderRadius: '50%',
-    flexShrink: 0,
-  },
-  variants: {
-    border: {
-      border: {
-        border: `1px solid ${color.black[5]}`,
-      },
-      none: {},
-    },
-  },
+export const iconStyle = style({
+  borderRadius: '50%',
+  flexShrink: 0,
 });
 
 export const textStyle = style([
   font.outfit.r14,
   {
     flex: 1,
-    color: color.black[100],
+    color: color.white[100],
 
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',

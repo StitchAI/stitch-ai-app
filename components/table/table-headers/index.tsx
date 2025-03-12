@@ -41,12 +41,12 @@ export const TableHeader = ({
         {icon}
       </div>
 
-      {sorted &&
+      {/* {sorted &&
         (sorted === 'asc' ? (
           <IconArrowUp width={16} height={16} fill={color.white[100]} />
         ) : (
           <IconArrowDown width={16} height={16} fill={color.white[100]} />
-        ))}
+        ))} */}
     </div>
   );
 };

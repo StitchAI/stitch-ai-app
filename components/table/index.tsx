@@ -29,7 +29,6 @@ interface ReactTableProps<D> {
   moreText?: string;
 
   backgroundColor?: string;
-  xScrollDim?: boolean;
 
   handleRowClick?: (metadata: any) => void;
 
@@ -44,7 +43,7 @@ export const Table = <D,>({
   selectedRows,
 
   minWidth = 500,
-  elementHeight = 58,
+  elementHeight = 60,
   maxHeight = 500,
   height,
 
@@ -54,8 +53,7 @@ export const Table = <D,>({
   emptyText,
   moreText,
 
-  backgroundColor = 'rgba(255, 255, 255, 1)',
-  xScrollDim = false,
+  backgroundColor = 'rgba(255, 255, 255, 0.1)',
 
   handleRowClick,
 
@@ -102,7 +100,7 @@ export const Table = <D,>({
   }, [fetchNext, hasNext, isIntersecting]);
 
   return (
-    <div data-table-container className={style.tableContainerStyle({ xScrollDim })}>
+    <div data-table-container className={style.tableContainerStyle}>
       {/* {isScrolling && (
         <div className={style.scrollToTopStyle}>
           <IconButton
@@ -209,7 +207,7 @@ export const Table = <D,>({
               {more && (
                 <div className={style.moreStyle} onClick={fetchNext}>
                   {moreText || 'Load more'}
-                  <IconDown width={20} height={20} fill={color.black[60]} />
+                  {/* <IconDown width={20} height={20} fill={color.black[60]} /> */}
                 </div>
               )}
               {hasNext && infinite && (

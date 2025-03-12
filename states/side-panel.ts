@@ -45,11 +45,16 @@ const useStore = create<State>()(
   )
 );
 
-export const useSidePanelState = (id: string) => {
+export const useSidePanelState = (id: string, defaultOpened = false) => {
   const { opened, open, close } = useStore();
+  const isOpened = opened.includes(id);
+
+  if (defaultOpened && !isOpened) {
+    open(id);
+  }
 
   return {
-    opened: opened.includes(id),
+    opened: isOpened,
     open: () => open(id),
     close: () => close(id),
   };

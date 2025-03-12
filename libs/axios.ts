@@ -7,7 +7,6 @@ const baseUrl = IS_LOCAL ? 'http://localhost:8080' : 'http://stitchai-server.co/
 export const api = axios.create({
   baseURL: baseUrl,
   headers: { 'Content-Type': 'application/json' },
-  withCredentials: true,
 });
 
 export const storageApi = axios.create({});

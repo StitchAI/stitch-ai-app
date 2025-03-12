@@ -75,14 +75,3 @@ export const contentTitle = style([
     color: color.white[100],
   },
 ]);
-
-export const cards = style({
-  display: 'flex',
-  gap: 20,
-});
-
-export const marketTab = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: 32,
-});

@@ -57,6 +57,14 @@ export const font = {
       letterSpacing: '-0.42px',
     },
 
+    r12: {
+      fontFamily: 'Outfit',
+      fontSize: '12px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '16px',
+      letterSpacing: '-0.36px',
+    },
     r14: {
       fontFamily: 'Outfit',
       fontSize: '14px',
@@ -105,6 +113,14 @@ export const font = {
       fontWeight: '500',
       lineHeight: '20px',
       letterSpacing: '-0.42px',
+    },
+    m16: {
+      fontFamily: 'Outfit',
+      fontSize: '16px',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '22px',
+      letterSpacing: '-0.48px',
     },
     m18: {
       fontFamily: 'Outfit',

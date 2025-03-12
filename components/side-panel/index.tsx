@@ -12,11 +12,12 @@ import * as style from './style.css';
 interface Props {
   id: string;
   title?: string;
-  content?: ReactNode;
+  children?: ReactNode;
+  defaultOpened?: boolean;
 }
 
-export const SidePanel = ({ id, title, content }: Props) => {
-  const { opened, close } = useSidePanelState(id);
+export const SidePanel = ({ id, title, children, defaultOpened = false }: Props) => {
+  const { opened, close } = useSidePanelState(id, defaultOpened);
 
   if (!opened) return;
   return (
@@ -27,7 +28,7 @@ export const SidePanel = ({ id, title, content }: Props) => {
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          transition={{ ease: 'easeInOut' }}
         >
           <div className={style.header}>
             <div className={style.title}>{title}</div>
@@ -35,7 +36,7 @@ export const SidePanel = ({ id, title, content }: Props) => {
               <IconClose width={20} height={20} fill={color.white[50]} />
             </button>
           </div>
-          <div className={style.content}>{content}</div>
+          <div className={style.content}>{children}</div>
         </motion.div>
       </div>
     </AnimatePresence>
