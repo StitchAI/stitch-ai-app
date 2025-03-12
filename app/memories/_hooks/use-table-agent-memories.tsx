@@ -11,6 +11,7 @@ import { TableElementText } from '@/components/table/table-elements/text';
 import { TableHeader } from '@/components/table/table-headers';
 
 interface Data {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   metadata: any;
   id: string;
   name: string;

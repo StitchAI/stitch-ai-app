@@ -115,41 +115,44 @@ const ListingProcess = () => {
         memoryType: 0, // 0: agent memory
       });
 
-      const request = {
-        price: Number(value),
-        active: true,
-        memoryType: '0', // agent memory
-        internalId: txReceipt?.logs[0]?.topics?.[1]
-          ? BigInt(txReceipt.logs[0].topics[1]).toString()
-          : '1',
-        txHash: txReceipt?.transactionHash || '',
-        memoryId: selectedVersion,
-        sellerId: address as string,
-      };
-
-      await createMarketListing(request);
-
-      setStep(0);
-      setSelectedMemory('');
-      setSelectedVersion('');
-      reset();
-
-      openSuccessDialog({
-        params: {
-          title: 'Memory listed successfully',
-          description: 'Your memory has been successfully listed.',
+      if (txReceipt?.status === 'success') {
+        const request = {
+          price: Number(value),
+          active: true,
+          memoryType: '0', // agent memory
+          internalId: txReceipt?.logs[0]?.topics?.[1]
+            ? BigInt(txReceipt.logs[0].topics[1]).toString()
+            : '0',
           txHash: txReceipt?.transactionHash || '',
-          buttonText: 'Go to Market',
-          onButtonClick: () => {
-            closeSuccessDialog();
-            closeSidePanel();
+          memoryId: selectedVersion,
+          sellerId: address as string,
+        };
+
+        await createMarketListing(request);
+
+        setStep(0);
+        setSelectedMemory('');
+        setSelectedVersion('');
+        reset();
+
+        openSuccessDialog({
+          params: {
+            title: 'Memory listed successfully',
+            description: 'Your memory has been successfully listed.',
+            txHash: txReceipt?.transactionHash || '',
+            buttonText: 'Go to Market',
+            onButtonClick: () => {
+              closeSuccessDialog();
+              closeSidePanel();
+            },
           },
-        },
-      });
+        });
+      }
     } catch (error) {
       console.error('Failed to list memory:', error);
     }
   };
+
   const renderContent = () => {
     switch (step) {
       case 0:

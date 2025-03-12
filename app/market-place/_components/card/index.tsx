@@ -29,6 +29,7 @@ export const AgentMemoryCard = ({ price, name, listingId, internalId }: AgentMem
   const router = useRouter();
   const { address } = useAccount();
   const { open: openSuccessDialog } = useDialog('success');
+
   const { mutateAsync: approve } = useTxApprove();
   const { mutateAsync: buyMemory } = useTxMarketBuyMemory();
   const { mutateAsync: createPurchase } = usePostMarketPurchase(address as string);
@@ -40,15 +41,17 @@ export const AgentMemoryCard = ({ price, name, listingId, internalId }: AgentMem
       setIsLoading(true);
 
       setButtonText('Approving...');
-      await approve({
+      const approveTxReceipt = await approve({
         amount: price.toString(),
         spender: CONTRACTS_DEVNET.MEMORY_MARKETPLACE,
       });
+      if (approveTxReceipt?.status !== 'success') return;
 
       setButtonText('Buying...');
       const txReceipt = await buyMemory({
         memoryId: internalId,
       });
+      if (txReceipt?.status !== 'success') return;
 
       setButtonText('Saving...');
       if (listingId && internalId && txReceipt?.transactionHash) {
@@ -90,7 +93,7 @@ export const AgentMemoryCard = ({ price, name, listingId, internalId }: AgentMem
       </div>
       <div className={style.body}>
         <div className={style.priceWrapper}>
-          <div className={style.price}>{formatNumeric(price, { suffix: ' USDC' })}</div>
+          <div className={style.price}>{formatNumeric(price, { decimal: 4, suffix: ' USDC' })}</div>
           <div className={style.priceLabel}>/month</div>
         </div>
         <ButtonPrimary text={buttonText} size="medium" onClick={handleBuy} disabled={isLoading} />
@@ -106,12 +109,7 @@ interface ExternalMemoryCardProps {
   operatorLogo?: string;
 }
 
-export const ExternalMemoryCard = ({
-  id,
-  price,
-  operator,
-  operatorLogo,
-}: ExternalMemoryCardProps) => {
+export const ExternalMemoryCard = ({ price, operator }: ExternalMemoryCardProps) => {
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
