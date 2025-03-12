@@ -170,6 +170,7 @@ const ListingProcess = () => {
                   key={h.id}
                   id={h.id}
                   message={h.message}
+                  isSelected={h.id === selectedVersion}
                   createdAt={format(new Date(h.createdAt || Date.now()), 'MMM d, h:mm a')}
                   onSelect={() => handleSelectVersion(h.id)}
                   step={step}
