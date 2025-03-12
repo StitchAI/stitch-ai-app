@@ -11,7 +11,7 @@ export const wrapper = style({
 export const dropdownAction = recipe({
   base: [
     utilities.flexCenter,
-    font.outfit.r16,
+    font.r16,
     {
       width: 'fit-content',
 
@@ -34,7 +34,7 @@ export const dropdownAction = recipe({
   },
 });
 
-export const address = style([utilities.address, font.outfit.r16]);
+export const address = style([utilities.address, font.r16]);
 
 export const dropdownList = recipe({
   base: {
@@ -83,7 +83,7 @@ export const divider = style({
 
 export const accountAddress = style([
   utilities.flexCenter,
-  font.outfit.r16,
+  font.r16,
   {
     width: '100%',
     gap: '4px',
@@ -92,7 +92,7 @@ export const accountAddress = style([
 
 export const disconnect = style([
   utilities.flexCenter,
-  font.outfit.r16,
+  font.r16,
   {
     width: '100%',
     gap: 8,

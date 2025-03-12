@@ -28,7 +28,7 @@ export const menu = style({
 });
 
 export const menuItem = recipe({
-  base: [font.outfit.r16],
+  base: [font.r16],
   variants: {
     active: {
       true: {

@@ -30,7 +30,7 @@ export const container = style({
 });
 
 export const title = style([
-  font.outfit.r32,
+  font.r32,
   {
     color: color.white[100],
   },
@@ -58,7 +58,7 @@ export const content = style({
 });
 
 export const contentTitle = style([
-  font.outfit.m18,
+  font.m18,
   {
     display: 'flex',
     alignItems: 'center',

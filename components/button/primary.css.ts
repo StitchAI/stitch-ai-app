@@ -6,7 +6,7 @@ import { font, utilities } from '@/styles/global';
 export const wrapper = recipe({
   base: [
     utilities.flexCenter,
-    font.outfit.r16,
+    font.r16,
     {
       flexShrink: 0,
       gap: '12px',
@@ -27,7 +27,7 @@ export const wrapper = recipe({
   variants: {
     size: {
       medium: {
-        ...font.outfit.r14,
+        ...font.r14,
         padding: '8px 16px',
         height: 36,
 
@@ -61,15 +61,15 @@ export const wrapper = recipe({
 export const normal = recipe({
   base: [
     utilities.flexCenter,
-    font.outfit.r16,
+    font.r16,
     {
       flexShrink: 0,
       gap: '12px',
 
       borderRadius: 100,
-      background: color.black[5],
+      background: color.white[5],
 
-      color: color.black[100],
+      color: color.white[100],
       cursor: 'pointer',
 
       ':disabled': {
@@ -82,7 +82,7 @@ export const normal = recipe({
   variants: {
     size: {
       medium: {
-        ...font.outfit.r14,
+        ...font.r14,
         padding: '8px 16px',
         height: 36,
 

@@ -5,7 +5,7 @@ import { font } from '@/styles/global';
 export const color = createVar();
 
 export const textButton = style([
-  font.outfit.r14,
+  font.r14,
   {
     display: 'flex',
     alignItems: 'center',

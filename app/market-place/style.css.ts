@@ -34,7 +34,7 @@ export const contentWrapper = style({
 });
 
 export const title = style([
-  font.outfit.r32,
+  font.r32,
   {
     display: 'flex',
     alignItems: 'center',
@@ -66,7 +66,7 @@ export const content = style({
 });
 
 export const contentTitle = style([
-  font.outfit.m18,
+  font.m18,
   {
     display: 'flex',
     alignItems: 'center',

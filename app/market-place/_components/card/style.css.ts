@@ -37,7 +37,7 @@ export const icon = style({
 });
 
 export const title = style([
-  font.outfit.m20,
+  font.m20,
   {
     color: color.white[100],
   },
@@ -55,13 +55,13 @@ export const priceWrapper = style({
 });
 
 export const price = style([
-  font.outfit.r20,
+  font.r20,
   {
     color: color.white[100],
   },
 ]);
 export const priceLabel = style([
-  font.outfit.r14,
+  font.r14,
   {
     color: color.white[50],
   },

@@ -39,7 +39,7 @@ export const symbol = style([
 ]);
 
 export const title = style([
-  font.outfit.r56,
+  font.r56,
   {
     color: color.white[100],
 

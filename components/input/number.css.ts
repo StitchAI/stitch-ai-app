@@ -26,7 +26,7 @@ export const innerWrapperStyle = style({
 });
 
 export const inputWrapperStyle = style([
-  font.outfit.r20,
+  font.r20,
   {
     display: 'flex',
     alignItems: 'center',
@@ -51,14 +51,14 @@ export const inputStyle = style([
 ]);
 
 export const labelStyle = style([
-  font.outfit.r20,
+  font.r20,
   {
     color: color.white[100],
   },
 ]);
 
 export const errorStyle = style([
-  font.outfit.r14,
+  font.r14,
   {
     display: 'flex',
     alignItems: 'center',

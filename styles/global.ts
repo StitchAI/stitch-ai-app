@@ -39,6 +39,114 @@ export const utilities = {
 };
 
 export const font = {
+  l12: {
+    fontSize: '12px',
+    fontStyle: 'normal',
+    fontWeight: '300',
+    lineHeight: '16px',
+    letterSpacing: '-0.36px',
+  },
+  l14: {
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: '300',
+    lineHeight: '20px',
+    letterSpacing: '-0.42px',
+  },
+
+  r12: {
+    fontSize: '12px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '16px',
+    letterSpacing: '-0.36px',
+  },
+  r14: {
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '22px',
+    letterSpacing: '-0.42px',
+  },
+  r16: {
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '24px',
+    letterSpacing: '-0.48px',
+  },
+  r20: {
+    fontSize: '20px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '24px',
+    letterSpacing: '-0.6px',
+  },
+  r32: {
+    fontSize: '32px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '38px',
+    letterSpacing: '-1.6px',
+  },
+  r56: {
+    fontSize: '56px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '60px',
+    letterSpacing: '-2.8px',
+  },
+
+  m14: {
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '20px',
+    letterSpacing: '-0.42px',
+  },
+  m16: {
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '22px',
+    letterSpacing: '-0.48px',
+  },
+  m18: {
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '24px',
+    letterSpacing: '-0.54px',
+  },
+  m20: {
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '26px',
+    letterSpacing: '-0.8px',
+  },
+  m28: {
+    fontSize: '28px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '36px',
+    letterSpacing: '-0.84px',
+  },
+  m40: {
+    fontSize: '40px',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    lineHeight: '48px',
+    letterSpacing: '-1.2px',
+  },
+
+  thin60: {
+    fontSize: '60px',
+    fontStyle: 'normal',
+    fontWeight: '200',
+    lineHeight: '64px',
+    letterSpacing: '-2.4px',
+  },
   outfit: {
     l12: {
       fontFamily: 'Outfit',

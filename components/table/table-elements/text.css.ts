@@ -18,7 +18,7 @@ export const iconStyle = style({
 });
 
 export const textStyle = style([
-  font.outfit.r14,
+  font.r14,
   {
     flex: 1,
     color: color.white[100],

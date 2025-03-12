@@ -126,7 +126,7 @@ export const bodyRowStyle = recipe({
 
 export const emptyTextStyle = style([
   utilities.flexCenter,
-  font.outfit.r14,
+  font.r14,
   utilities.flexCenter,
   {
     padding: '24px',
@@ -143,7 +143,7 @@ export const emptyTextStyle = style([
 ]);
 
 export const moreStyle = style([
-  font.outfit.r14,
+  font.r14,
   {
     padding: '24px',
     color: color.black[60],

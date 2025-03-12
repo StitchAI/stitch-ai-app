@@ -12,7 +12,7 @@ export const wrapperStyle = style({
 
 export const itemStyle = recipe({
   base: [
-    font.outfit.r14,
+    font.r14,
     {
       transition: 'color 0.1s',
       cursor: 'pointer',
@@ -50,7 +50,7 @@ export const itemStyle = recipe({
     {
       variants: { status: 'selected', theme: 'dark' },
       style: {
-        ...font.outfit.m14,
+        ...font.m14,
         color: color.lightBlue[100],
       },
     },

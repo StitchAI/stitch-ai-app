@@ -16,14 +16,14 @@ export const header = style({
 });
 
 export const message = style([
-  font.outfit.m18,
+  font.m18,
   {
     color: color.white[100],
   },
 ]);
 
 export const description = style([
-  font.outfit.r14,
+  font.r14,
   {
     display: 'flex',
     alignItems: 'center',

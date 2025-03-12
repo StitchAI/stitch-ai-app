@@ -41,7 +41,7 @@ export const header = style({
 });
 
 export const title = style([
-  font.outfit.r32,
+  font.r32,
   {
     display: 'flex',
     alignItems: 'center',

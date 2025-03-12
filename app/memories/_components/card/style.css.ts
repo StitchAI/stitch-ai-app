@@ -24,14 +24,14 @@ export const header = style({
 });
 
 export const title = style([
-  font.outfit.m20,
+  font.m20,
   {
     color: color.white[100],
   },
 ]);
 
 export const operator = style([
-  font.outfit.r14,
+  font.r14,
   {
     color: color.white[50],
   },

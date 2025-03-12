@@ -7,7 +7,7 @@ import { font } from '@/styles/global';
 export const align = createVar();
 export const wrapperStyle = recipe({
   base: [
-    font.outfit.r14,
+    font.r14,
     {
       minWidth: '0',
       width: '100%',

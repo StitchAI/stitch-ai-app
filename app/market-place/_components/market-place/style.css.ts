@@ -16,7 +16,7 @@ export const marketTab = style({
 });
 
 export const empty = style([
-  font.outfit.r14,
+  font.r14,
   {
     display: 'flex',
     alignItems: 'center',

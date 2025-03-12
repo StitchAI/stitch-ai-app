@@ -27,7 +27,7 @@ export const wrapperStyle = style({
 
 export const tabStyle = recipe({
   base: [
-    font.outfit.m18,
+    font.m18,
     {
       position: 'relative',
 
@@ -73,7 +73,7 @@ export const tabStyle = recipe({
 
 export const tabLength = recipe({
   base: [
-    font.outfit.m14,
+    font.m14,
     {
       display: 'flex',
       flexDirection: 'column',

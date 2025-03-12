@@ -61,14 +61,14 @@ export const header = style({
 });
 
 export const message = style([
-  font.outfit.r14,
+  font.r14,
   {
     color: color.white[100],
   },
 ]);
 
 export const description = style([
-  font.outfit.r12,
+  font.r12,
   {
     display: 'flex',
     alignItems: 'center',
@@ -105,7 +105,7 @@ export const step = style({
 });
 
 export const title = style([
-  font.outfit.m16,
+  font.m16,
   {
     color: color.white[100],
   },

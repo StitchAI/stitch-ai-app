@@ -31,7 +31,7 @@ export const header = style({
 });
 
 export const title = style([
-  font.outfit.m18,
+  font.m18,
   {
     color: color.white[100],
   },

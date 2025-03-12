@@ -32,7 +32,7 @@ export const menu = style({
 
 export const menuItem = recipe({
   base: [
-    font.outfit.r16,
+    font.r16,
     {
       display: 'flex',
       alignItems: 'center',
