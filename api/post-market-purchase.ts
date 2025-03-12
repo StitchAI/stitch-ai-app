@@ -15,7 +15,7 @@ export const usePostMarketPurchase = (walletAddress: string) => {
   const queryClient = useQueryClient();
 
   const mutationFn = async (request: Request): Promise<void> => {
-    const apikey = `demo-${walletAddress}`;
+    const apikey = `demo-${walletAddress}`.toLowerCase();
     await api.post(`/purchase`, request, {
       headers: {
         apikey,

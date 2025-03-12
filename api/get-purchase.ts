@@ -4,7 +4,7 @@ import { Purchase } from '@/entities/purchase';
 import { api } from '@/libs/axios';
 
 const axios = async (walletAddress: String) => {
-  const apikey = `demo-${walletAddress}`;
+  const apikey = `demo-${walletAddress}`.toLowerCase();
   return (
     await api.get<Purchase[]>(`/purchase`, {
       headers: {

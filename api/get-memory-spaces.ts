@@ -8,7 +8,7 @@ interface Response {
 }
 
 const axios = async (walletAddress: String) => {
-  const apikey = `demo-${walletAddress}`;
+  const apikey = `demo-${walletAddress}`.toLowerCase();
   return (
     await api.get<Response>(`/memory/spaces`, {
       headers: {

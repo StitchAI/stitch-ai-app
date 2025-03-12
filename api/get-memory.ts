@@ -19,7 +19,7 @@ interface Response {
 }
 
 const axios = async (params: Params) => {
-  const apikey = `demo-${params.walletAddress}`;
+  const apikey = `demo-${params.walletAddress}`.toLowerCase();
   return (
     await api.get<Response>(`/memory/${params.name}`, {
       headers: {
