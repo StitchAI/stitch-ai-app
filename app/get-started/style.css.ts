@@ -18,3 +18,23 @@ export const body = style({
   background:
     'radial-gradient(81.45% 100% at 50% 100%, rgba(151, 165, 255, 0.60) 0%, rgba(151, 165, 255, 0.00) 100%), linear-gradient(302deg, rgba(140, 45, 255, 0.03) 9.67%, rgba(140, 45, 255, 0.10) 81.68%)',
 });
+
+export const container = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 32,
+
+  width: '100%',
+  height: 'calc(100dvh - 76px)',
+
+  overflow: 'auto',
+
+  padding: '20px 40px',
+});
+
+export const title = style([
+  font.r32,
+  {
+    color: color.white[100],
+  },
+]);
