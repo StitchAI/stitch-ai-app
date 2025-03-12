@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAccount } from 'wagmi';
 
 import { useGetMemory } from '@/api/get-memory';
@@ -10,14 +10,12 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { ButtonPrimary } from '@/components/button/primary';
 import { Gnb } from '@/components/gnb';
 import { SideMenu } from '@/components/side-menu';
-import { SidePanel } from '@/components/side-panel';
 import { useSidePanelState } from '@/states/side-panel';
 
 import { MemoryDetails } from './_components/memory-details';
 import { VersionHistory } from './_components/version-history';
 import * as style from './style.css';
 
-// memory detail
 export default function Page() {
   const { address } = useAccount();
   const { memory } = useParams();
@@ -28,7 +26,13 @@ export default function Page() {
     },
   });
   const { open } = useSidePanelState('version-history');
-  const [versionId, setVersionId] = useState<string>(data?.memory?.id || '');
+  const [versionId, setVersionId] = useState<string>('');
+
+  useEffect(() => {
+    if (data?.memory?.id) {
+      setVersionId(data.memory.id);
+    }
+  }, [data?.memory?.id]);
 
   return (
     <main className={style.main}>
