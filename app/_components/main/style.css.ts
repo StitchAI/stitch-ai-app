@@ -3,26 +3,25 @@ import { style } from '@vanilla-extract/css';
 import { color } from '@/assets/color';
 import { font, utilities } from '@/styles/global';
 
-export const wrapperStyle = style({
-  width: '100%',
-});
-
 export const content = style({
   maxWidth: 1440,
+  width: '100%',
+  height: 750,
   margin: '0 auto',
-
-  paddingTop: 82,
-});
-
-export const contentInner = style({
-  position: 'relative',
-  height: 372,
 
   display: 'flex',
   flexDirection: 'column',
-
   alignItems: 'center',
-  justifyContent: 'flex-end',
+  justifyContent: 'space-between',
+  gap: 120,
+
+  padding: '80px 0 60px 0',
+});
+
+export const kv = style({
+  width: '100%',
+  height: 360,
+  position: 'relative',
 });
 
 export const symbol = style([
@@ -30,28 +29,21 @@ export const symbol = style([
   {
     position: 'absolute',
     top: 0,
-
-    width: 216,
-    height: 216,
-
-    objectFit: 'cover',
   },
 ]);
 
 export const title = style([
   font.r56,
+  utilities.absoluteCenterX,
   {
     color: color.white[100],
 
     textAlign: 'center',
     whiteSpace: 'pre-wrap',
-  },
-]);
 
-export const button = style([
-  utilities.absoluteCenterX,
-  {
-    position: 'fixed',
-    bottom: 60,
+    position: 'absolute',
+    bottom: 0,
+
+    zIndex: 1,
   },
 ]);

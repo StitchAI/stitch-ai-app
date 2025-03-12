@@ -75,6 +75,13 @@ export const font = {
     lineHeight: '24px',
     letterSpacing: '-0.48px',
   },
+  r18: {
+    fontSize: '18px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '24px',
+    letterSpacing: '-0.54px',
+  },
   r20: {
     fontSize: '20px',
     fontStyle: 'normal',
@@ -82,12 +89,26 @@ export const font = {
     lineHeight: '24px',
     letterSpacing: '-0.6px',
   },
+  r24: {
+    fontSize: '24px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '30px',
+    letterSpacing: '-0.96px',
+  },
   r32: {
     fontSize: '32px',
     fontStyle: 'normal',
     fontWeight: '400',
     lineHeight: '38px',
     letterSpacing: '-1.6px',
+  },
+  r40: {
+    fontSize: '40px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '44px',
+    letterSpacing: '-2px',
   },
   r56: {
     fontSize: '56px',
@@ -205,6 +226,7 @@ export const font = {
       lineHeight: '38px',
       letterSpacing: '-1.6px',
     },
+
     r56: {
       fontFamily: 'Outfit',
       fontSize: '56px',
