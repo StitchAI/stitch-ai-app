@@ -15,16 +15,18 @@ interface Props {
   height?: string;
 }
 
-export const Dialog = ({ id, content, width = '630px', height = 'fit-content' }: Props) => {
-  const { opened } = useDialog(id);
+export const Dialog = ({ id, content, width = '360px', height = 'fit-content' }: Props) => {
+  const { opened, close } = useDialog(id);
 
   if (!opened) return;
   return (
-    <div
-      className={style.content}
-      style={assignInlineVars({ [style.widthVar]: width, [style.heightVar]: height })}
-    >
-      {content}
+    <div className={style.overlay} onClick={close}>
+      <div
+        className={style.content}
+        style={assignInlineVars({ [style.widthVar]: width, [style.heightVar]: height })}
+      >
+        {content}
+      </div>
     </div>
   );
 };

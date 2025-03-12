@@ -20,7 +20,7 @@ const contentKeyframes = keyframes({
 });
 
 export const overlay = style({
-  backgroundColor: color.black[80],
+  backgroundColor: color.black[50],
   position: 'fixed',
   inset: 0,
   animation: `${overlayKeyframes} 150ms cubic-bezier(0.4, 0, 0.2, 1)`,
@@ -34,7 +34,9 @@ export const content = style([
     height: heightVar,
     width: widthVar,
 
-    backgroundColor: color.white[100],
+    backgroundColor: '#0B1236',
+    borderRadius: 24,
+    boxShadow: '0px 8px 40px 0px rgba(0, 0, 0, 0.30)',
 
     position: 'fixed',
     zIndex: 11,

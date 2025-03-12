@@ -10,12 +10,15 @@ import * as yup from 'yup';
 import { useGetMemory } from '@/api/get-memory';
 import { useGetMemorySpaces } from '@/api/get-memory-spaces';
 import { usePostMarketListing } from '@/api/post-market-listing';
+import { useTxMarketListMemory } from '@/api/tx-market-list-memory';
 import { color } from '@/assets/color';
 import IconArrowBack from '@/assets/icon/icon-arrow-back.svg';
 import { ButtonPrimary } from '@/components/button/primary';
 import { ButtonText } from '@/components/button/text';
 import { InputNumber } from '@/components/input/number';
 import { SidePanel } from '@/components/side-panel';
+import { useDialog } from '@/hooks/use-dialog';
+import { useSidePanelState } from '@/states/side-panel';
 
 import * as style from './style.css';
 
@@ -35,6 +38,9 @@ const ListingProcess = () => {
   const [step, setStep] = useState<number>(0);
   const [selectedMemory, setSelectedMemory] = useState<string>('');
   const [selectedVersion, setSelectedVersion] = useState<string>('');
+
+  const { close: closeSidePanel } = useSidePanelState('list-memory');
+  const { open: openSuccessDialog, close: closeSuccessDialog } = useDialog('success');
 
   const { address } = useAccount();
 
@@ -89,44 +95,60 @@ const ListingProcess = () => {
   const {
     watch,
     formState: { errors },
+    reset,
   } = methods;
 
   const errorMessage = errors.PRICE?.message;
   const value = watch('PRICE'); // memory price
 
-  const { mutate: createMarketListing } = usePostMarketListing(address as string);
+  const { mutateAsync: createMarketListing } = usePostMarketListing(address as string);
+  const { mutateAsync: listMemory } = useTxMarketListMemory();
 
-  const handleList = () => {
+  const handleList = async () => {
     if (errorMessage || !value) {
       return;
     }
 
-    const request = {
-      price: Number(value),
-      active: true,
-      memoryType: '0', // agent memory
-      internalId: '1', // for test
-      txHash: '0x1234567890123456789012345678901234567890', // for test
-      memoryId: selectedVersion,
-      sellerId: address as string,
-    };
+    try {
+      const txReceipt = await listMemory({
+        price: value,
+        memoryType: 0, // 0: agent memory
+      });
 
-    createMarketListing(request, {
-      onSuccess: () => {
-        console.log('Memory listed successfully');
+      const request = {
+        price: Number(value),
+        active: true,
+        memoryType: '0', // agent memory
+        internalId: txReceipt?.logs[0]?.topics?.[1] || '1',
+        txHash: txReceipt?.transactionHash || '',
+        memoryId: selectedVersion,
+        sellerId: address as string,
+      };
 
-        setStep(0);
-        setSelectedMemory('');
-        setSelectedVersion('');
+      await createMarketListing(request);
 
-        // TODO: show success dailog
-      },
-      onError: error => {
-        console.error('Failed to list memory:', error);
-      },
-    });
+      setStep(0);
+      setSelectedMemory('');
+      setSelectedVersion('');
+      reset();
+
+      // TODO: show success dialog
+      openSuccessDialog({
+        params: {
+          title: 'Memory listed successfully',
+          description: 'Your memory has been successfully listed.',
+          txHash: txReceipt?.transactionHash || '',
+          buttonText: 'Go to Market',
+          onButtonClick: () => {
+            closeSuccessDialog();
+            closeSidePanel();
+          },
+        },
+      });
+    } catch (error) {
+      console.error('Failed to list memory:', error);
+    }
   };
-
   const renderContent = () => {
     switch (step) {
       case 0:
