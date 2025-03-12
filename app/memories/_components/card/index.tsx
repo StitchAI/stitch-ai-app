@@ -11,12 +11,7 @@ interface ExternalMemoryCardProps {
   operatorLogo?: string;
 }
 
-export const ExternalMemoryCard = ({
-  id,
-  name,
-  operator,
-  operatorLogo,
-}: ExternalMemoryCardProps) => {
+export const ExternalMemoryCard = ({ name, operator }: ExternalMemoryCardProps) => {
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
