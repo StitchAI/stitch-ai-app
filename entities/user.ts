@@ -1,12 +1,15 @@
-import { MemorySpace } from './memory';
+import { ExternalMemory, MemorySpace } from './memory';
 
 export type User = {
   walletAddress: string;
+
+  apiKey: string;
 
   createdAt: Date;
   updatedAt: Date;
 };
 
-export type UserWithMemorySpaces = User & {
+export type UserWithMemory = User & {
   memorySpaces: MemorySpace[];
+  externalMemories: ExternalMemory[];
 };
