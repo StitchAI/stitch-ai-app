@@ -18,7 +18,7 @@ export default function Page() {
             description="Get started by installing the Stitch AI package"
             codes={[
               { label: 'node js', code: 'npm install -g @stitch-ai/cli', language: 'bash' },
-              { label: 'python', code: 'pip install @stitch-ai/cli', language: 'bash' },
+              { label: 'python', code: 'pip install stitch_ai', language: 'bash' },
             ]}
           />
 
