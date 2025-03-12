@@ -98,6 +98,7 @@ export const step = style({
   width: 20,
   height: 20,
   padding: 2,
+  lineHeight: 1,
   borderRadius: 20,
   backgroundColor: color.white[100],
   color: color.purple[100],
@@ -109,3 +110,14 @@ export const title = style([
     color: color.white[100],
   },
 ]);
+
+export const input = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 24,
+});
+
+export const listButton = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
+});

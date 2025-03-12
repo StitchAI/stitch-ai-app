@@ -8,10 +8,14 @@ const axios = async () => {
 };
 
 export const useGetMarketListings = () => {
-  const queryKey = ['marketplace', 'list'];
+  const queryKey = ['market', 'listings'];
   const data = useQuery<MarketListing[]>({
     queryKey,
     queryFn: () => axios(),
+
+    select: data => {
+      return data.filter(item => item.active === true);
+    },
   });
 
   return { queryKey, ...data };
