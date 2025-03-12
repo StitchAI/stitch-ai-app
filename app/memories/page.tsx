@@ -4,7 +4,7 @@ import { Gnb } from '@/components/gnb';
 import { SideMenu } from '@/components/side-menu';
 
 import { AgentMemories } from './_components/agent-memories';
-import { MemoryCard } from './_components/card';
+import { ExternalMemories } from './_components/external-memories';
 import * as style from './style.css';
 
 export default function Page() {
@@ -27,10 +27,7 @@ export default function Page() {
           </div>
           <div className={style.content}>
             <div className={style.contentTitle}>Subscriptions</div>
-            <div className={style.cards}>
-              <MemoryCard />
-              <MemoryCard />
-            </div>
+            <ExternalMemories />
           </div>
         </div>
       </div>

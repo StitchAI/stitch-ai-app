@@ -4,14 +4,31 @@ import Image from 'next/image';
 
 import * as style from './style.css';
 
-export const MemoryCard = () => {
+interface ExternalMemoryCardProps {
+  id: string;
+  name?: string;
+  operator?: string;
+  operatorLogo?: string;
+}
+
+export const ExternalMemoryCard = ({
+  id,
+  name,
+  operator,
+  operatorLogo,
+}: ExternalMemoryCardProps) => {
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
-        <Image src={'/images/logo-nansen.png'} alt="logo" width={40} height={40} />
-        <div className={style.title}>Memory Title</div>
+        {operator === 'Nansen' && (
+          <Image src={'/images/logo-nansen.png'} alt="Nansen" width={40} height={40} />
+        )}
+        {operator === 'Chainlink' && (
+          <Image src={'/images/logo-chainlink.png'} alt="Chainlink" width={40} height={40} />
+        )}
+        <div className={style.title}>{name}</div>
       </div>
-      <div className={style.operator}>Nansen</div>
+      <div className={style.operator}>{operator}</div>
     </div>
   );
 };
