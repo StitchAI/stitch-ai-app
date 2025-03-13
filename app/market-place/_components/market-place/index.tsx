@@ -56,6 +56,8 @@ export const MarketPlace = () => {
               <ExternalMemoryCard
                 key={i}
                 id={m.externalMemoryId || ''}
+                listingId={m.id || ''}
+                internalId={m.internalId || ''}
                 price={m.price}
                 operator={m.externalMemory?.operator}
                 operatorLogo={m.externalMemory?.operatorLogo}

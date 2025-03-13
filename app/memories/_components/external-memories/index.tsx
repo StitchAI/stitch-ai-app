@@ -17,6 +17,7 @@ export const ExternalMemories = () => {
     <div className={style.wrapper}>
       {externalMemories.map(item => {
         const { externalMemory } = item.listing;
+        externalMemory;
         return (
           <ExternalMemoryCard
             key={externalMemory?.id}
