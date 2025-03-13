@@ -16,6 +16,8 @@ export const wrapper = style({
 
   userSelect: 'none',
   cursor: 'pointer',
+
+  flexShrink: 0,
 });
 
 export const logo = style({

@@ -11,19 +11,28 @@ interface Props {
   code: string;
   language?: string;
   minHeight?: string | number;
+  maxHeight?: string | number;
 }
 
-export const CodeBlock = ({ code, language = 'javascript', minHeight = 'auto' }: Props) => {
+export const CodeBlock = ({
+  code,
+  language = 'javascript',
+  minHeight = 'auto',
+  maxHeight = '500px',
+}: Props) => {
   return (
     <SyntaxHighlighter
       language={language}
+      showLineNumbers
       customStyle={{
         backgroundColor: '#0B1236',
         borderRadius: 16,
         padding: 20,
         margin: 0,
         minHeight: minHeight,
+        maxHeight: maxHeight,
         textShadow: '0',
+        overflow: 'auto',
       }}
       codeTagProps={{ style: { color: color.white[100] } }}
     >
@@ -38,6 +47,7 @@ interface CodeBlocksProps {
     code: string;
     language: string;
     minHeight?: string | number;
+    maxHeight?: string | number;
   }[];
 }
 export const CodeBlocks = ({ code }: CodeBlocksProps) => {
@@ -64,6 +74,7 @@ export const CodeBlocks = ({ code }: CodeBlocksProps) => {
         code={code[selected].code}
         language={code[selected].language}
         minHeight={code[selected].minHeight}
+        maxHeight={code[selected].maxHeight}
       />
     </div>
   );

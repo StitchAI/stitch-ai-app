@@ -11,7 +11,7 @@ interface Props {
 
 const UserProvider = ({ children }: Props) => {
   const { address } = useAccount();
-  useGetUserStatic({ queries: { walletAddress: address } });
+  useGetUserStatic({ queries: { walletAddress: address?.toLowerCase() } });
 
   return <>{children}</>;
 };

@@ -12,7 +12,7 @@ export const main = style({
 
 export const body = style({
   flex: 1,
-  width: '100%',
+  width: 'calc(100% - 240px)',
 
   borderRadius: '40px 0 0 40px',
   background:
@@ -29,7 +29,7 @@ export const contentWrapper = style({
   flexDirection: 'column',
   gap: 32,
 
-  width: '100%',
+  width: 'calc(100% - 320px)',
   padding: '20px 40px',
 });
 

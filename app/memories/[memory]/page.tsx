@@ -62,9 +62,7 @@ export default function Page() {
                 <ButtonPrimary text="Edit" size="medium" onClick={open} />
               </div>
             </div>
-            <div>
-              <MemoryDetails id={versionId} />
-            </div>
+            <MemoryDetails id={versionId} />
           </div>
           <VersionHistory versionId={versionId} onSelectVersion={setVersionId} />
         </div>

@@ -27,7 +27,7 @@ const axios = async (queries: Queries) => {
 export const useGetUserStatic = (request: Request) => {
   const { queries } = request || {};
 
-  const queryKey = ['user', queries?.walletAddress];
+  const queryKey = ['user', queries?.walletAddress?.toLowerCase()];
   const data = useQuery<User>({
     queryKey,
     queryFn: () => axios(queries),
@@ -42,7 +42,7 @@ export const useGetUserStatic = (request: Request) => {
 export const useGetUser = (request: Request) => {
   const { queries } = request || {};
 
-  const queryKey = ['user', queries?.walletAddress];
+  const queryKey = ['user', queries?.walletAddress?.toLowerCase()];
   const data = useSuspenseQuery<User>({
     queryKey,
     queryFn: () => axios(queries),
