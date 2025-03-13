@@ -24,6 +24,7 @@ export const CodeBlock = ({
     <SyntaxHighlighter
       language={language}
       showLineNumbers
+      wrapLines={true}
       customStyle={{
         backgroundColor: '#0B1236',
         borderRadius: 16,
@@ -34,7 +35,13 @@ export const CodeBlock = ({
         textShadow: '0',
         overflow: 'auto',
       }}
-      codeTagProps={{ style: { color: color.white[100] } }}
+      codeTagProps={{
+        style: {
+          color: color.white[100],
+          wordBreak: 'break-all',
+          whiteSpace: 'pre-wrap',
+        },
+      }}
     >
       {code}
     </SyntaxHighlighter>

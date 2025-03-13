@@ -11,6 +11,7 @@ export const wrapper = style({
   gap: 32,
 
   padding: '20px',
+  maxWidth: 360,
 
   borderRadius: 20,
   background: color.white[10],

@@ -32,6 +32,9 @@ export const MemoryDetails = ({ id }: Props) => {
   const versionId = currentMemory?.id.substring(0, 8) || '';
   const formattedDate = format(new Date(currentMemory?.createdAt || Date.now()), 'MMM d, h:mm a');
 
+  const characterMemory = currentMemory?.data?.character;
+  const episodicMemory = currentMemory?.data?.episodic;
+
   return (
     <div className={style.wrapper}>
       <div className={style.header}>
@@ -42,8 +45,8 @@ export const MemoryDetails = ({ id }: Props) => {
           {formattedDate}
         </div>
       </div>
-      <CodeBlock code={currentMemory?.data?.character || ''} minHeight={200} />
-      <CodeBlock code={currentMemory?.data?.episodic || ''} minHeight={200} />
+      {characterMemory && <CodeBlock code={characterMemory} minHeight={200} />}
+      {episodicMemory && <CodeBlock code={episodicMemory} minHeight={200} />}
     </div>
   );
 };

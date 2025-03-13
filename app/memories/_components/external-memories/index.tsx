@@ -13,6 +13,8 @@ export const ExternalMemories = () => {
 
   const externalMemories = data?.filter(item => item.listing.memoryType === '1') || [];
 
+  if (externalMemories.length === 0)
+    return <div className={style.emptyStyle}>There are no subscriptions.</div>;
   return (
     <div className={style.wrapper}>
       {externalMemories.map(item => {

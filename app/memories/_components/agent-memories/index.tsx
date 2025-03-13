@@ -9,8 +9,9 @@ import * as style from './style.css';
 
 export const AgentMemories = () => {
   const router = useRouter();
-  const { table } = useTableAgentMemories();
+  const { table, length } = useTableAgentMemories();
 
+  if (length === 0) return <div className={style.emptyStyle}>There are no memories.</div>;
   return (
     <div className={style.wrapper}>
       <Table

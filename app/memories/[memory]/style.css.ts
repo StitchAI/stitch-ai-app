@@ -22,6 +22,8 @@ export const body = style({
 export const container = style({
   display: 'flex',
   minHeight: 'calc(100dvh - 76px)',
+
+  overflowX: 'hidden',
 });
 
 export const contentWrapper = style({
