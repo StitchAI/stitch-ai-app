@@ -12,7 +12,30 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: 'Stitch AI',
-  description: 'Stitch AI',
+  description: 'Decentralized Knowledge Hub for AI',
+
+  openGraph: {
+    title: 'Stitch AI',
+    description: 'Decentralized Knowledge Hub for AI',
+    url: 'https://app-devnet.stitch-ai.co/',
+    siteName: 'Stitch AI',
+    images: [
+      {
+        url: '/images/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Stitch AI',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Stitch AI',
+    description: 'Decentralized Knowledge Hub for AI',
+    images: ['/images/og.png'],
+  },
 };
 
 export const viewport: Viewport = {
