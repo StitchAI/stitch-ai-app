@@ -7,6 +7,9 @@ export const wrapper = style({
   display: 'flex',
   flexDirection: 'column',
   gap: 20,
+
+  height: '100%',
+  overflowY: 'auto',
 });
 
 export const header = style({

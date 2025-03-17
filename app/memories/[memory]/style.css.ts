@@ -21,7 +21,7 @@ export const body = style({
 
 export const container = style({
   display: 'flex',
-  minHeight: 'calc(100dvh - 76px)',
+  height: 'calc(100dvh - 76px)',
 
   overflowX: 'hidden',
 });
@@ -32,6 +32,8 @@ export const contentWrapper = style({
   gap: 32,
 
   width: 'calc(100% - 320px)',
+  height: '100%',
+  overflowY: 'auto',
   padding: '20px 40px',
 });
 
