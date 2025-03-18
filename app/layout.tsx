@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Stitch AI',
     images: [
       {
-        url: '/images/og.png',
+        url: 'https://app-devnet-bsc.stitch-ai.co/images/og.png',
         width: 1200,
         height: 630,
         alt: 'Stitch AI',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Stitch AI',
     description: 'Decentralized Knowledge Hub for AI',
-    images: ['/images/og.png'],
+    images: ['https://app-devnet-bsc.stitch-ai.co/images/og.png'],
   },
 };
 
