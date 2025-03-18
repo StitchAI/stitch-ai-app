@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stitch AI',
     description: 'Decentralized Knowledge Hub for AI',
-    url: 'https://app-devnet.stitch-ai.co/',
+    url: 'https://app-devnet-bsc.stitch-ai.co/',
     siteName: 'Stitch AI',
     images: [
       {
