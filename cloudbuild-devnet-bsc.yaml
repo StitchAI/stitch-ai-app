@@ -1,0 +1,91 @@
+options:
+  logging: CLOUD_LOGGING_ONLY # 클라우드 로깅만 사용하도록 설정
+
+timeout: '1200s' # 20분 전체 빌드 타임아웃
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        # set .env.devnet for build
+        echo "$(gcloud secrets versions access latest --secret=stitch-ai-app--devnet-bsc)" > .env.devnet
+
+        # set env.yaml for cloud run
+        echo "$(gcloud secrets versions access latest --secret=stitch-ai-app--devnet-bsc)" | \
+        awk -F= '
+          NF && !/^#/ {
+            key=$1
+            # 첫 번째 = 이후의 모든 내용을 value로 취급
+            value=substr($0,index($0,"=")+1)
+            # 주석 제거
+            sub(/#.*$/, "", value)
+            # 앞뒤 공백과 따옴표 제거
+            gsub(/^[ \t"'\'']+|[ \t"'\'']+$/, "", value)
+            # boolean 값을 소문자로 변환
+            if (tolower(value) ~ /^(true|false)$/) {
+              value = tolower(value)
+            }
+            # 순수 숫자이거나 불리언, 0x로 시작하는 16진수인 경우 따옴표 추가
+            if (value ~ /^[0-9]+$/ || tolower(value) ~ /^(true|false)$/ || value ~ /^0x[0-9a-fA-F]+$/) {
+              printf "%s: \"%s\"\n", key, value
+            } else {
+              printf "%s: %s\n", key, value
+            }
+          }
+        ' > env.yaml
+
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'asia-northeast1-docker.pkg.dev/stitch-ai-451906/stitch-ai/stitch-ai-app-bsc:$TAG_NAME-$BUILD_ID-$SHORT_SHA',
+        '-f',
+        'deploy-devnet.dockerfile',
+        '.',
+      ]
+
+  # Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'asia-northeast1-docker.pkg.dev/stitch-ai-451906/stitch-ai/stitch-ai-app-bsc:$TAG_NAME-$BUILD_ID-$SHORT_SHA',
+      ]
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    timeout: '600s' # 10분 타임아웃
+    args:
+      [
+        'run',
+        'deploy',
+        'stitch-ai-app--devnet-bsc',
+        '--service-account',
+        'superuser@stitch-ai-451906.iam.gserviceaccount.com',
+        '--image',
+        'asia-northeast1-docker.pkg.dev/stitch-ai-451906/stitch-ai/stitch-ai-app-bsc:$TAG_NAME-$BUILD_ID-$SHORT_SHA',
+        '--region',
+        'asia-northeast1',
+        '--platform',
+        'managed',
+        '--port',
+        '3000',
+        '--memory',
+        '2Gi',
+        '--cpu',
+        '1',
+        '--no-cpu-throttling',
+        '--min-instances',
+        '1',
+        '--max-instances',
+        '30',
+        '--env-vars-file',
+        'env.yaml',
+      ]
+
+images:
+  - 'asia-northeast1-docker.pkg.dev/stitch-ai-451906/stitch-ai/stitch-ai-app-bsc:$TAG_NAME-$BUILD_ID-$SHORT_SHA'
