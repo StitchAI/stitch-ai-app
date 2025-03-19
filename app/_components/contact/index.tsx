@@ -1,3 +1,5 @@
+'use client';
+
 import Logo from '@/assets/typo/landing-logo.svg';
 import { ButtonPrimary } from '@/components/button/primary';
 
@@ -14,7 +16,12 @@ export const LandingContact = () => {
         </div>
 
         <div className={style.button}>
-          <ButtonPrimary text="Contact Us" state="normal" size="medium" />
+          <ButtonPrimary
+            text="Contact Us"
+            state="normal"
+            size="medium"
+            onClick={() => (window.location.href = 'mailto:team@stitch-ai.co')}
+          />
         </div>
       </div>
       <div className={style.logo}>
