@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { IS_LOCAL } from '@/constants';
 
-const baseUrl = IS_LOCAL ? 'http://localhost:8080' : 'https://api-devnet-bsc.stitch-ai.co';
+const baseUrl = IS_LOCAL ? 'http://localhost:8080' : 'https://api-devnet.stitch-ai.co';
 
 export const api = axios.create({
   baseURL: baseUrl,
