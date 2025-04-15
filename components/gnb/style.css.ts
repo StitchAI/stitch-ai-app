@@ -4,15 +4,35 @@ import { recipe } from '@vanilla-extract/recipes';
 import { color } from '@/assets/color';
 import { font } from '@/styles/global';
 
-export const wrapper = style({
-  width: '100%',
-  height: 76,
+export const wrapper = recipe({
+  base: [
+    {
+      width: '100%',
+      height: 76,
 
-  display: 'flex',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
 
-  padding: '20px 40px',
+      padding: '20px',
+
+      '@media': {
+        '(min-width: 769px)': {
+          padding: '20px 40px',
+        },
+      },
+    },
+  ],
+  variants: {
+    isLanding: {
+      true: {
+        justifyContent: 'space-between',
+      },
+      false: {
+        justifyContent: 'flex-end',
+      },
+    },
+  },
 });
 
 export const logo = style({
