@@ -25,7 +25,7 @@ export const LandingContact = () => {
         </div>
       </div>
       <div className={style.logo}>
-        <Logo width={770} height={168} />
+        <Logo width={770} height={168} className={style.logoImage} />
       </div>
     </div>
   );

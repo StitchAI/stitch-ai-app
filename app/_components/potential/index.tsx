@@ -15,7 +15,7 @@ export const LandingPotential = () => {
               alt="potential"
               width={668}
               height={380}
-              style={{ objectFit: 'cover', height: '380px', borderRadius: '40px 40px 0 0' }}
+              className={style.image}
             />
           </div>
           <div className={style.featureText}>Transfer Knowledge between Agents and Platforms</div>
@@ -27,12 +27,12 @@ export const LandingPotential = () => {
               alt="potential"
               width={668}
               height={380}
-              style={{ objectFit: 'cover', height: '380px', borderRadius: '40px 40px 0 0' }}
+              className={style.image}
             />
           </div>
           <div className={style.featureText}>Monetize Agent Experiences</div>
         </div>
-        <div className={style.feature} style={{ gridColumn: 'span 2' }}>
+        <div className={`${style.feature} ${style.last}`}>
           <div className={style.imageWrapper} style={{}}>
             <div className={style.imageInnerWrapper}>
               <Image
@@ -40,7 +40,7 @@ export const LandingPotential = () => {
                 alt="potential"
                 width={624}
                 height={270}
-                style={{ objectFit: 'cover', height: '270px', borderRadius: '40px 40px 0 0' }}
+                className={style.image}
               />
             </div>
           </div>

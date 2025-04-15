@@ -96,6 +96,13 @@ export const font = {
     lineHeight: '30px',
     letterSpacing: '-0.96px',
   },
+  r28: {
+    fontSize: '28px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '34px',
+    letterSpacing: '-1.12px',
+  },
   r32: {
     fontSize: '32px',
     fontStyle: 'normal',
