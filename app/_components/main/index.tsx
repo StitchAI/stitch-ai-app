@@ -15,8 +15,9 @@ export const LandingMain = () => {
   return (
     <div className={style.content}>
       <div className={style.kv}>
-        <Symbol className={style.symbol} />
+        <Symbol width={216} height={216} className={style.symbol} />
         <div className={style.title}>{'Decentralized\nKnowledge Hub\nfor AI'}</div>
+        <div className={style.titleMobile}>{'Decentralized\nKnowledge Hub for AI'}</div>
       </div>
       <ButtonPrimary
         text="Go to App"

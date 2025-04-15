@@ -14,11 +14,17 @@ export const content = style({
   flexDirection: 'column',
   gap: 60,
 
-  padding: '0 40px',
+  padding: '0 20px',
+
+  '@media': {
+    '(min-width: 769px)': {
+      padding: '0 40px',
+    },
+  },
 });
 
 export const title = style([
-  font.r40,
+  font.r28,
   {
     textAlign: 'center',
 
@@ -27,14 +33,25 @@ export const title = style([
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
+
+    '@media': {
+      '(min-width: 769px)': {
+        ...font.r40,
+      },
+    },
   },
 ]);
 
 export const features = style({
   display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
 
   gap: 20,
+
+  '@media': {
+    '(min-width: 769px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+  },
 });
 
 export const feature = style({
@@ -48,12 +65,27 @@ export const feature = style({
   backgroundColor: color.black[100],
 });
 
+export const last = style({
+  '@media': {
+    '(min-width: 769px)': {
+      gridColumn: 'span 2',
+    },
+  },
+});
+
 export const featureText = style([
-  font.r24,
+  font.r18,
   {
     color: color.white[100],
-    padding: '0 20px 60px 20px',
+    padding: '0 20px 40px 20px',
     textAlign: 'center',
+
+    '@media': {
+      '(min-width: 769px)': {
+        ...font.r24,
+        padding: '0 20px 60px 20px',
+      },
+    },
   },
 ]);
 
@@ -71,6 +103,12 @@ export const imageWrapper = style([
     overflow: 'hidden',
   },
 ]);
+
+export const image = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+});
 
 export const imageInnerWrapper = style({
   width: '100%',

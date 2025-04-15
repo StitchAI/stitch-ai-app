@@ -13,9 +13,16 @@ export const content = style({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: 80,
+  gap: 60,
 
-  padding: '100px 40px 0px 40px',
+  padding: '60px 20px 0px 20px',
+
+  '@media': {
+    '(min-width: 769px)': {
+      gap: 80,
+      padding: '100px 40px 0px 40px',
+    },
+  },
 });
 
 export const header = style({
@@ -29,7 +36,7 @@ export const header = style({
 });
 
 export const title = style([
-  font.r40,
+  font.r28,
   {
     textAlign: 'center',
 
@@ -38,6 +45,12 @@ export const title = style([
     backgroundClip: 'text',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
+
+    '@media': {
+      '(min-width: 769px)': {
+        ...font.r40,
+      },
+    },
   },
 ]);
 
@@ -54,7 +67,20 @@ export const button = style([utilities.flexCenter, {}]);
 export const logo = style([
   utilities.flexCenter,
   {
-    width: '100%',
+    margin: '0 -40px',
+    width: 'calc(100% + 80px)',
     overflow: 'hidden',
   },
 ]);
+
+export const logoImage = style({
+  width: '360px',
+  height: '79px',
+
+  '@media': {
+    '(min-width: 769px)': {
+      width: '770px',
+      height: '168px',
+    },
+  },
+});
