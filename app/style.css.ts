@@ -4,9 +4,15 @@ export const main = style({
   display: 'flex',
   flexDirection: 'column',
 
-  gap: 120,
+  gap: 80,
 
   backgroundColor: '#0B1236',
+
+  '@media': {
+    '(min-width: 769px)': {
+      gap: 120,
+    },
+  },
 });
 
 export const section1 = style({
