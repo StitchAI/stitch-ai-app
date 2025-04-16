@@ -6,8 +6,8 @@ import { font, utilities } from '@/styles/global';
 export const content = style({
   maxWidth: 1440,
   width: '100%',
-  // height: 750,
-  height: 'calc(100dvh - 76px)',
+  minHeight: '460px',
+  height: 'calc(100dvh - 156px)',
   margin: '0 auto',
 
   display: 'flex',
@@ -21,6 +21,8 @@ export const content = style({
   '@media': {
     '(min-width: 769px)': {
       gap: 120,
+      minHeight: '662px',
+      height: 'calc(100dvh - 126px)',
     },
   },
 });
