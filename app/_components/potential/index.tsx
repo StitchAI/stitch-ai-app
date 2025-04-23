@@ -13,8 +13,8 @@ export const LandingPotential = () => {
             <Image
               src={'/images/image-feature-1.png'}
               alt="potential"
-              width={668}
-              height={380}
+              width={670}
+              height={365}
               className={style.image}
             />
           </div>
@@ -23,30 +23,40 @@ export const LandingPotential = () => {
         <div className={style.feature}>
           <div className={style.imageWrapper}>
             <Image
-              src={'/images/image-feature-3.png'}
+              src={'/images/image-feature-2.png'}
               alt="potential"
-              width={668}
-              height={380}
+              width={670}
+              height={365}
               className={style.image}
             />
           </div>
           <div className={style.featureText}>Monetize Agent Experiences</div>
         </div>
-        <div className={`${style.feature} ${style.last}`}>
-          <div className={style.imageWrapper} style={{}}>
+        <div className={style.feature}>
+          <div className={style.imageWrapper}>
+            <Image
+              src={'/images/image-feature-3.png'}
+              alt="potential"
+              width={670}
+              height={365}
+              className={style.image}
+            />
+          </div>
+          <div className={style.featureText}>Transfer Knowledge between Agents and Platforms</div>
+        </div>
+        <div className={style.feature}>
+          <div className={style.imageWrapper}>
             <div className={style.imageInnerWrapper}>
               <Image
-                src={'/images/image-feature-2.png'}
+                src={'/images/image-feature-4.png'}
                 alt="potential"
-                width={624}
-                height={270}
+                width={670}
+                height={365}
                 className={style.image}
               />
             </div>
           </div>
-          <div className={style.featureText}>
-            Access LLM-Ready External Knowledge for your Agents
-          </div>
+          <div className={style.featureText}>MCP Compliant for Easy Integration</div>
         </div>
       </div>
     </div>
