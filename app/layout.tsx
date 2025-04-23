@@ -1,7 +1,7 @@
 import '@/styles/global.css';
 
 import { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import { headers } from 'next/headers';
 
 import DialogProvider from '@/providers/dialog';
@@ -9,7 +9,11 @@ import UserProvider from '@/providers/user';
 import Web3Provider from '@/providers/web3';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
-
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+});
 export const metadata: Metadata = {
   title: 'Stitch AI',
   description: 'Decentralized Knowledge Hub for AI',
@@ -49,7 +53,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const cookie = (await headers()).get('cookie');
 
   return (
-    <html lang="en" className={`${inter.className}`}>
+    <html lang="en" className={`${inter.className} ${spaceGrotesk.variable}`}>
       <body>
         <Web3Provider cookie={cookie}>
           <UserProvider>
